@@ -6,6 +6,10 @@ Twitter bot that sends a message if there's a hype amount of viewers watching a 
 
 Runs on it's own droplet/server.
 
+Requirements:
+Python 3.6+
+Tweepy
+
 Updated Dec 17th:
 Adding -> Smash Bros Ultimate
 """
