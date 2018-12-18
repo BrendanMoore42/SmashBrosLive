@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba660145-bc58-41e7-b0f2-925fcd6e1c2b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smashbroslive.py" afterPath="$PROJECT_DIR$/smashbroslive.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/smashbroslive.py" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,12 +13,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="smashbroslive.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/smashbroslive.py">
+      <file leaf-file-name="smashbrosliveV2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smashbrosliveV2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+            <state relative-caret-position="660">
+              <caret line="54" column="38" lean-forward="true" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lyra_smash2.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../Lyra/SmashBrosLive/lyra_smash2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding>
+                <element signature="e#20#33#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,13 +59,14 @@
         <option value="$PROJECT_DIR$/lyra_smash2_test.py" />
         <option value="$PROJECT_DIR$/redditscrape.py" />
         <option value="$PROJECT_DIR$/smashbroslive.py" />
+        <option value="$PROJECT_DIR$/../Lyra/SmashBrosLive/lyra_smash2.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="687" />
+    <option name="x" value="489" />
     <option name="y" value="56" />
-    <option name="width" value="753" />
+    <option name="width" value="951" />
     <option name="height" value="770" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -131,7 +144,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.lyra_smash2_test">
+  <component name="RunManager" selected="Python.lyra_smash2">
     <configuration name="lyra_smash" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -145,6 +158,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="twittertwitch" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lyra_smash.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="lyra_smash2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Lyra/SmashBrosLive" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="twittertwitch" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Lyra/SmashBrosLive/lyra_smash2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -183,23 +213,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="twitterstream (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../twittertwitch" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="twittertwitch" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../twittertwitch/twitterstream.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <configuration name="twitterstream" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -219,18 +232,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.twitterstream" />
-      <item index="1" class="java.lang.String" itemvalue="Python.twitterstream (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.smashbroslive" />
-      <item index="3" class="java.lang.String" itemvalue="Python.lyra_smash" />
-      <item index="4" class="java.lang.String" itemvalue="Python.lyra_smash2_test" />
+      <item index="1" class="java.lang.String" itemvalue="Python.smashbroslive" />
+      <item index="2" class="java.lang.String" itemvalue="Python.lyra_smash" />
+      <item index="3" class="java.lang.String" itemvalue="Python.lyra_smash2_test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.lyra_smash2" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.lyra_smash2_test" />
-        <item index="1" class="java.lang.String" itemvalue="Python.smashbroslive" />
-        <item index="2" class="java.lang.String" itemvalue="Python.lyra_smash" />
-        <item index="3" class="java.lang.String" itemvalue="Python.twitterstream" />
-        <item index="4" class="java.lang.String" itemvalue="Python.twitterstream (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python.lyra_smash2" />
+        <item index="1" class="java.lang.String" itemvalue="Python.lyra_smash2_test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.smashbroslive" />
+        <item index="3" class="java.lang.String" itemvalue="Python.lyra_smash" />
+        <item index="4" class="java.lang.String" itemvalue="Python.twitterstream" />
       </list>
     </recent_temporary>
   </component>
@@ -248,13 +261,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="687" y="56" width="753" height="770" extended-state="0" />
+    <frame x="489" y="56" width="951" height="770" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39534885" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35555556" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13925926" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -279,8 +292,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/twitterstream.py" />
-    <entry file="file://$PROJECT_DIR$/../twittertwitch/twitterstream.py" />
     <entry file="file://$PROJECT_DIR$/redditscrape.py" />
     <entry file="file://$PROJECT_DIR$/credentials.py" />
     <entry file="file://$PROJECT_DIR$/json_parser.py" />
@@ -331,9 +342,27 @@
     <entry file="file://$PROJECT_DIR$/lyra_smash2.py" />
     <entry file="file://$PROJECT_DIR$/smashbroslive.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        <state relative-caret-position="90">
+          <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smashbrosliveV2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="54" column="38" lean-forward="true" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Lyra/SmashBrosLive/lyra_smash2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="e#20#33#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
