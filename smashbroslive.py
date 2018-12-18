@@ -1,16 +1,30 @@
+"""
+date: March 3, 2018
+author: @BrendanMoore42
+
+Twitter bot that sends a message if there's a hype amount of viewers watching a smash tournament.
+
+Runs on it's own droplet/server.
+
+Updated Dec 17th:
+Adding -> Smash Bros Ultimate
+"""
+
+from credentials import *
 import tweepy
 from tweepy import OAuthHandler
-from credentials import *
 
-import json
-import re
-import time
 import os
+import re
+import json
+import time
 
-from bs4 import BeautifulSoup
 import urllib.request
+from bs4 import BeautifulSoup
 
-smash_games = ['Super Smash Bros. Melee', 'Super Smash Bros. for Wii U', 'Super Smash Bros. Brawl', 'Super Smash Bros.']
+smash_games = ['Super Smash Bros. Melee', 'Super Smash Bros. for Wii U',
+               'Super Smash Bros. Brawl', 'Super Smash Bros.',
+               'Super Smash Bros. Ultimate']
 
 def send_tweet(tweet):
     # Authenticates via API
@@ -115,10 +129,10 @@ def sort_user_data():
                         print('No tweet sent...')
                         return True
                     else:
-                        print('Plup Club')
+                        print('Something else happened...\n')
                         return True
                 if checker == False:
-                    print("Beep boop beep...")
+                    print("Beep boop beep...\n")
                     checker = True
 
 
