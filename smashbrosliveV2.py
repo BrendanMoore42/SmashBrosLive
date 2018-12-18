@@ -13,19 +13,21 @@ Tweepy
 Updated Dec 17th:
 Adding -> Smash Bros Ultimate
 """
-
+# Seperate folder with account tokens, passwords and html file to grab data
 from credentials import *
-import tweepy
-from tweepy import OAuthHandler
 
 import os
 import re
 import json
 import time
 
+import tweepy
+from tweepy import OAuthHandler
+
 import urllib.request
 from bs4 import BeautifulSoup
 
+# Add games to search for here
 smash_games = ['Super Smash Bros. Melee', 'Super Smash Bros. for Wii U',
                'Super Smash Bros. Brawl', 'Super Smash Bros.',
                'Super Smash Bros. Ultimate']
@@ -36,50 +38,55 @@ def send_tweet(tweet):
     auth.set_access_token(access_token, access_secret)
     api = tweepy.API(auth)
 
-    #sends tweet
+    # Sends tweet
     api.update_status(tweet)
 
 
 def get_viewer_data():
     """
-    Accesses json data from reddit smashbros stream - if error (too many requests, bad page, etc),
+    Accesses json data from stream data link- if error (too many requests, bad page, etc),
     will wait 10 minutes to check again until successful. If successful, appends data to file and
-    continues
+    continues.
     """
+    # Function will loop until a file is found.
     file_success = None
 
     while file_success is None:
         try:
-            #Fetch site
-            red = "https://www.reddit.com/r/smashbros/wiki/livestreams.json"
+            # Grab site from credentials.py
+            link = link
 
-            #load site, soup it
-            red_page = urllib.request.urlopen(red)
-            red_soup = BeautifulSoup(red_page, 'html.parser')
-            #Turn to text then to json
-            red_step = str(red_soup)
-            json2 = json.loads(red_step)
+            # Load site and soup it with BS4
+            link_page = urllib.request.urlopen(link)
+            link_soup = BeautifulSoup(link_page, 'html.parser')
+            # Convert to text, then to json format
+            link_step = str(link_soup)
+            json2 = json.loads(link_step)
 
-            # Write viewer data to file
+            # Write viewer data back to text file
             with open(f'smash_json.txt', 'w') as file:
                 file.write(json2['data']['content_md'])
+            # Hooray!
             file_success = 'Success!'
             return True
 
         except:
             print('Unsuccessful, trying in 10 minutes')
             time.sleep(600)
-            pass
+
 
 def sort_user_data():
     """
-    Parses stream, streamer and view count from txt file, depending on count will send a tweet or
-    wait 3 hours until next check.
+    Opens json txt file and extracts link to stream, name of stream and # of viewers. If number of
+    viewers passes threshold a tweet is sent out. If a tweet is sent, bot will sleep for a few hours,
+    this prevents spamming.
     """
 
+    # When checker is True the function will continue to search for a tweet
+    # If a tweet is found checker is False and function exits
     checker = True
 
-    #Sort data
+    # Opens json txt and assigns variables
     with open(f'smash_json.txt', 'r') as file:
         for line in file:
             l = ''
@@ -87,23 +94,24 @@ def sort_user_data():
             k = l.split('|')
             game = k[0]
 
-            #Isolate view count
-            #viewers = k[2:3]
-            #Turn view count to strings
+            # Turn view count to strings
             view_count = ''.join(k[2:3])
 
-            #Split stream to streamer
+            # Split stream to streamer
             stream_j = ''.join(k[1:2])
             streamer_s = stream_j.split(']')
             streamer = streamer_s[0]
 
-            #Isolate stream link
+            # Isolate stream link
             stream_search = re.search("(?P<url>https?://[^\s]+)", str(streamer_s))
 
             #Counts viewers and tweets if success
             if game in smash_games:
 
+                # Failsafe for spamming tweets
                 if checker == True:
+
+                    # 10 Million because you never know.
                     if 50000 < int(view_count) < 10000000:
                         tweet_to_send = f"Whoa! There are {view_count} viewers for {game} on {stream_search[0][:-3]} right now! Don't miss this one! #SmashBros #{streamer[1:]}"
                         print(tweet_to_send)
@@ -124,26 +132,21 @@ def sort_user_data():
                         print(tweet_to_send)
                         checker = False
                         send_tweet(tweet_to_send)
-                    # if 1501 < int(view_count) < 4999:
-                    #     tweet_to_send = f"Looks like {view_count} viewers enjoying {game} on {stream_search[0][:-3]}! Let's go! #SmashBros #{streamer[1:]}"
-                    #     print(tweet_to_send)
-                    #     checker = False
-                    #     send_tweet(tweet_to_send)
                     if int(view_count) < 4999:
                         print('No tweet sent...')
                         return True
                     else:
-                        print('Something else happened...\n')
+                        print('Trying again...\n')
                         return True
                 if checker == False:
-                    print("Beep boop beep...\n")
+                    # Exit loop and delete json file
                     checker = True
 
 
 def main():
     """
-    Looks for data, if found sends tweet based off view count,
-    removes txt file for next loop after sleep.
+    Constantly runs to see if conditions are met to send a tweet. If stream shows
+    enough viewers, tweet is sent, json files are deleted and bot goes to sleep.
     """
 
     while True:
