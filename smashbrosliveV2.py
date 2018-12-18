@@ -15,19 +15,16 @@ Adding -> Smash Bros Ultimate
 """
 # Seperate folder with account tokens, passwords and html file to grab data
 from credentials import *
-
 import os
 import re
 import json
 import time
-
 import tweepy
 from tweepy import OAuthHandler
-
 import urllib.request
 from bs4 import BeautifulSoup
 
-# Add games to search for here
+# Add games to search for here. RIP PM :(
 smash_games = ['Super Smash Bros. Melee', 'Super Smash Bros. for Wii U',
                'Super Smash Bros. Brawl', 'Super Smash Bros.',
                'Super Smash Bros. Ultimate']
@@ -82,7 +79,7 @@ def sort_user_data():
     this prevents spamming.
     """
 
-    # When checker is True the function will continue to search for a tweet
+    # When checker is True the function will search json data
     # If a tweet is found checker is False and function exits
     checker = True
 
@@ -105,7 +102,7 @@ def sort_user_data():
             # Isolate stream link
             stream_search = re.search("(?P<url>https?://[^\s]+)", str(streamer_s))
 
-            #Counts viewers and tweets if success
+            # Counts viewers and tweets if success
             if game in smash_games:
 
                 # Failsafe for spamming tweets
@@ -150,7 +147,6 @@ def main():
     """
 
     while True:
-
         get_viewer_data()
         sort_user_data()
 
